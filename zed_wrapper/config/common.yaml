@@ -20,7 +20,7 @@
             camera_max_reconnect: 5
             camera_flip: false
             serial_number: 0 # usually overwritten by launch file
-            pub_resolution: 'CUSTOM' # The resolution used for output. 'NATIVE' to use the same `general.grab_resolution` - `CUSTOM` to apply the `general.pub_downscale_factor` downscale factory to reduce bandwidth in transmission
+            pub_resolution: 'NATIVE' # The resolution used for output. 'NATIVE' to use the same `general.grab_resolution` - `CUSTOM` to apply the `general.pub_downscale_factor` downscale factory to reduce bandwidth in transmission
             pub_downscale_factor: 2.0 # rescale factor used to rescale image before publishing when 'pub_resolution' is 'CUSTOM'
             pub_frame_rate: 15.0 # frequency of publishing of visual images and depth images
             gpu_id: -1
@@ -116,7 +116,7 @@
 
         sensors:
             publish_imu_tf: true # [usually overwritten by launch file] enable/disable the IMU TF broadcasting
-            sensors_image_sync: false # Synchronize Sensors messages with latest published video/depth message
+            sensors_image_sync: true # Synchronize Sensors messages with latest published video/depth message
             sensors_pub_rate: 200. # frequency of publishing of sensors data. MAX: 400. - MIN: grab rate
             qos_history: 1 # '1': KEEP_LAST - '2': KEEP_ALL
             qos_depth: 1 # Queue size if using KEEP_LAST
